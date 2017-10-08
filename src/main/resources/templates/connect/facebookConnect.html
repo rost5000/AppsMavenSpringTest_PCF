@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Facebook Connect</title>
+</head>
+<body>
+<h3>Connect to Facebook</h3>
+
+Внимание, эта штука использует API facebook, и нужно разрешать домену имя
+<p />//Безопасность и все дела
+Если facebook выдаст ошибку, то нужно настроить API
+<form action="/connect/facebook" method="POST">
+    <input type="hidden" name="scope" value="user_posts" />
+    <div class="formInfo">
+        <p>You aren't connected to Facebook yet. Click the button to connect this application with your Facebook account.</p>
+    </div>
+    <p><button type="submit">Connect to Facebook</button></p>
+</form>
+</body>
+</html>

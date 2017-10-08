@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Facebook authenfication</title>
+</head>
+<body>
+<div class="container">
+
+
+    <div th:if="${facebookProfile}">
+        <h3>Hello, <span th:text="${facebookProfile.firstName}">Some User</span>!</h3>
+    </div>
+    <div th:if="${feed}">
+        <h4>Here is your feed:</h4>
+
+        <div th:each="post:${feed}">
+            <b th:text="${post.from.name}">from</b> wrote:
+            <p th:text="${post.message}">message text</p>
+            <img th:if="${post.picture}" th:src="${post.picture}"/>
+            <hr/>
+        </div>
+    </div>
+</div>
+</body>
+</html>

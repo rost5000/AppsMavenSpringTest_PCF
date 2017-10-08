@@ -1,0 +1,6 @@
+---
+applications:
+- name: AppsMavenSpringTest_PCF-1.0-SNAPSHOT
+  instances: 1
+  host: hello-spring-cloud-${random-word}
+  path: target/AppsMavenSpringTest_PCF-1.0-SNAPSHOT.jar

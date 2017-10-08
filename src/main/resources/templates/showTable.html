@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <title>Shcema</title>
+</head>
+<body>
+<div th:if="${showFormUser}">
+    <h2>Указать другую информацию</h2>
+    <form action="/showTable" th:action="@{/showTable}" th:object="${infoUser}" method="post">
+        <input type="text" th:field="*{dbUsername}"  value="root" /> <p />
+        <input type="password" th:field="*{dbPassword}" value="664998196" /> <p />
+        <input type="text" th:field="*{dbServer}" value="localhost" /> <p />
+        <button type="submit">Submit</button>
+        <p />
+    </form>
+</div>
+<h2>Таблицы</h2>
+<div th:if="${messageForUser}">
+    <strong text="${messageForUser}" />
+</div>
+
+<div th:if="${data}">
+    <table th:each="service : ${data}">
+    <td>
+        <tr>
+            <form action="${formAction1}" th:action="@{${formAction1}}" th:object="${choosenValue}" method="post">
+                <strong th:text="${service}"></strong>
+                <input type="hidden" th:field="*{val}" value="${service}" />
+                <input type="submit" value="show"></input>
+            </form>
+        </tr>
+    </td>
+    </table>
+</div>
+</body>
+</html>
